@@ -1,12 +1,15 @@
-// import Fighter from '../Fighter';
+import Fighter from '../Fighter';
 
-// abstract class Battle {
-//   constructor(protected player: Fighter) { }
+export default abstract class Battle {
+  constructor(
+    protected player: Fighter,
+  ) {}
 
-//   // Should return 1 if player wins, -1 otherwise
-//   fight(): number {
-//     return this.player.lifePoints === -1 ? -1 : 1;
-//   }
-// }
+  fight(): number {
+    if (this.player.lifePoints === -1) {
+      return -1;
+    }
 
-// export default Battle;
+    return 1;
+  }
+}
